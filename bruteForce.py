@@ -1,6 +1,6 @@
 import os
 
-text = 'pduwlq'
+text = 'churPduwlq'
 decrypted_list = []
 
 def remove():
@@ -15,8 +15,12 @@ def bruteForce():
     while s <= 26:
         decrypted_text = ''
         for character in text:
-            decrypted_character = chr((ord(character) - s - 97) % 26 +97)
-            decrypted_text += decrypted_character
+            if character.isupper():
+                decrypted_character = chr((ord(character) - s - 65) % 26 + 65)
+                decrypted_text += decrypted_character
+            elif character.islower():
+                decrypted_character = chr((ord(character) - s - 97) % 26 + 97)
+                decrypted_text += decrypted_character
         decrypted_list.append(decrypted_text)
         s += 1
     return decrypted_list
