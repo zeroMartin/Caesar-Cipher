@@ -1,6 +1,13 @@
-text = 'pduwlq'
+import os
 
+text = 'pduwlq'
 decrypted_list = []
+
+def remove():
+    if os.path.exists('decrypted_text.txt') == True:
+        os.remove('decrypted_text.txt')
+
+
 
 def bruteForce():
     s = 1
@@ -14,6 +21,16 @@ def bruteForce():
         s += 1
     return decrypted_list
 
+
+def write_file():
+    with open('decrypted_text.txt', 'w') as f:
+        for line in decrypted_list:
+            f.write(line)
+            f.write('\n')
+
+remove()
+
 decrypted_list = bruteForce()
 print(decrypted_list)
 
+write_file()
