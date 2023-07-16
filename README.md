@@ -14,7 +14,7 @@ This python code will use a brute force method to decrypt a text that was encryp
 To run the code you must have the following python modules installed:
 - os
 
-To execute the code tun the command:
+To execute the code run the command:
 ```
  python3 bruteForce.py
 ```
@@ -24,7 +24,7 @@ To execute the code tun the command:
 To run the code you must have the following python modules installed:
 - argparse
 
-To execute the code tun the command:
+To execute the code run the command:
 ```
  python3 caesarCipher.py
 ```
