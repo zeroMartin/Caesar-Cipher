@@ -1,6 +1,6 @@
 import os
 
-text = 'churPduwlq'
+text = input('Enter text you want to decrypt: ')
 decrypted_list = []
 
 def remove():

@@ -1,25 +1,30 @@
 import argparse
 
-text_to_encrypt = 'martin'
+#text_to_encrypt = 'martin'
 text_to_decrypt = 'churPduwlq'
 
-parser = argparse.ArgumentParser()
-parser.add_argument('-e', '--encrypt')
-parser.add_argument('-s', '--shift', type=int)
-args = parser.parse_args()
+encryption_parser = argparse.ArgumentParser()
+encryption_parser.add_argument('-e', '--encrypt')
+encryption_parser.add_argument('-s', '--shift', type=int)
+encryption_args = encryption_parser.parse_args()
 
+
+#decryption_parser = argparse.ArgumentParser()
+#decryption_parser.add_argument('-d', '--decrypt')
+#decryption_parser.add_argument('-s', '--shift', type=int)
+#decryption_args = decryption_parser.parse_args()
 
 # Function to encrypt text
 def caesar_encryption():
     
     encrypted_text = ''
 
-    for character in args.encrypt:
+    for character in encryption_args.encrypt:
         if character.isupper():
-            encrypted_character = chr(((ord(character) + args.shift - 65) % 26) + 65)
+            encrypted_character = chr(((ord(character) + encryption_args.shift - 65) % 26) + 65)
             encrypted_text += encrypted_character
         elif character.islower():
-            encrypted_character = chr(((ord(character) + args.shift - 97) % 26) + 97)
+            encrypted_character = chr(((ord(character) + encryption_args.shift - 97) % 26) + 97)
             encrypted_text += encrypted_character
     return encrypted_text
 
